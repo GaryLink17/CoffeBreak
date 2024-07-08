@@ -153,6 +153,11 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
+}
+
+.boton:hover {
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -205,10 +210,11 @@ img {
 
 /*Sobre nosotros*/
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .sobre-nosotros {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        align-items: center;
         column-gap: 2rem;
     }
 }
@@ -251,4 +257,27 @@ img {
     height: 40rem;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.formulario {
+    background-color: var(--blanco);
+    margin: -5rem auto 0 auto;
+    width: 95%;
+    padding: 5rem;
+}
+.campo {
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo__label {
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+}
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--grisClaro);
+}
+.campo__field--textarea {
+    height: 20rem;
 }
