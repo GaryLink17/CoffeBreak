@@ -3,31 +3,31 @@ const nombre = document.querySelector('#nombre');
 const email = document.querySelector('#email');
 const mensaje = document.querySelector('#mensaje');
 
-const datos = {
+datos = {
     nombre: '',
     email: '',
     mensaje: ''
 }
 
-nombre.addEventListener('input', leerDatos);
-email.addEventListener('input', leerDatos);
-mensaje.addEventListener('input', leerDatos);
+nombre.addEventListener('input', leeDatos);
+email.addEventListener('input', leeDatos);
+mensaje.addEventListener('input', leeDatos);
 
-formulario.addEventListener('submit', function(e) {
+
+formulario.addEventListener('submit', e => {
     e.preventDefault();
 
-    const {nombre: nombreForm, email:emailForm, mensaje:mensajeForm} = datos;
+    const { nombre: nombreForm, email: emailForm, mensaje: mensajeForm } = datos;
 
-    if (nombreForm === '' || emailForm === '' || mensajeForm === '') {
-        mostrarAlerta('Debes completar todos los campos', 'error');
+    if (nombreForm === "" || emailForm === "" || mensajeForm === "") {
+        mostrarAlerta("Completar todos los campos", "error");
         return;
     }
-    mostrarAlerta('Enviado');
-
+    mostrarAlerta("Enviado");
     formulario.reset()
 })
 
-function leerDatos(e) {
+function leeDatos(e) {
     datos[e.target.id] = e.target.value;
 }
 
@@ -36,9 +36,9 @@ function mostrarAlerta(mensaje, error = null) {
     alerta.textContent = mensaje;
 
     if (error) {
-        alerta.classList.add('error');
+        alerta.classList.add("error");
     } else {
-        alerta.classList.add('enviado');
+        alerta.classList.add("enviado");
     }
 
     formulario.appendChild(alerta);
